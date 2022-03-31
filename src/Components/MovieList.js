@@ -1,4 +1,5 @@
 import React from 'react'
+import './MovieList.css'
 
 function MovieList() {
     const persons = [
@@ -66,10 +67,17 @@ function MovieList() {
 
     const personList = persons.map(movie => (
         <>
-        <img src = { movie.img.src } alt={ movie.img.alt } width='200' />
-            <h2> {`#${  movie.ranking } - ${ movie.title } (${ movie.year })`} </h2>
-      <p> {`Distibutor: ${ movie.distributor }`} </p>
-      <p> {`Amount: ${ movie.amount }`} </p></>
+            <div className='row'>
+                <div className='column'>
+                    <div className="card">
+                    <img src={movie.img.src} alt={movie.img.alt} width='260px' />
+                    <h2> {`#${movie.ranking} - ${movie.title} (${movie.year})`} </h2>
+                    <p> {`Distibutor: ${movie.distributor}`} </p>
+                    <p> {`Amount: ${movie.amount}`} </p>
+                    </div>
+                </div>
+            </div>
+    </>
     ))
     return (
         <div><h1>MovieList</h1>
